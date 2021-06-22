@@ -1,11 +1,8 @@
 import { Router } from 'express';
+import { CreateUserControllerInstance } from './controllers/CreateUserController';
 
 const routes = Router();
 
-routes.get('/user', (request, response) => {
-  return response.send({
-    message: 'Hello World',
-  });
-});
+routes.post('/users', CreateUserControllerInstance.bridge);
 
 export { routes };
