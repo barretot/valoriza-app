@@ -3,13 +3,14 @@ import { CreateUserService } from '../services/CreateUserService';
 
 class CreateUserController {
   async bridge(request: Request, response: Response): Promise<Response> {
-    const { name, email, admin } = request.body;
+    const { name, email, admin, password } = request.body;
     const createUserService = new CreateUserService();
 
-    const user = await createUserService.executeService({
+    const user = await createUserService.executeCreateService({
       name,
       email,
       admin,
+      password,
     });
 
     return response.status(200).json({

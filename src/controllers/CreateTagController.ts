@@ -6,7 +6,7 @@ class CreateTagController {
     const { name } = request.body;
     const createTagService = new CreateTagService();
 
-    const tag = await createTagService.executeService({
+    const tag = await createTagService.executeCreateService({
       name,
     });
 

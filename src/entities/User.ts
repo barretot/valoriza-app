@@ -4,7 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  BeforeInsert,
 } from 'typeorm';
+
+import bcrypt from 'bcryptjs';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -23,11 +26,20 @@ class User {
   @Column()
   admin: boolean;
 
+  @Column()
+  password: string;
+
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @BeforeInsert()
+  async createPasswordHash() {
+    const hash = await bcrypt.hash(this.password, 8);
+    this.password = hash;
+  }
 
   constructor() {
     if (!this.id) {

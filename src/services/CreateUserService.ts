@@ -5,12 +5,18 @@ import { UsersRepositories } from '../repositories/UsersRepositories';
 import { ICreateUserRequestDTO } from './ServicesDTO/CreateUserDTO';
 
 class CreateUserService {
-  async executeService({ name, email, admin }: ICreateUserRequestDTO) {
+  async executeCreateService({
+    name,
+    email,
+    admin = false,
+    password,
+  }: ICreateUserRequestDTO) {
     const usersRepository = getCustomRepository(UsersRepositories);
 
     const validationFields = Yup.object().shape({
       name: Yup.string().required().min(2),
       email: Yup.string().email().required(),
+      password: Yup.string(),
     });
 
     const userAlreadyExists = await usersRepository.findOne({
@@ -21,6 +27,7 @@ class CreateUserService {
       name,
       email,
       admin,
+      password,
     });
 
     if (userAlreadyExists) {

@@ -6,7 +6,7 @@ import { TagsRepositories } from '../repositories/TagsRepositories';
 import { ICreateTagRequestDTO } from './ServicesDTO/CreateTagDTO';
 
 class CreateTagService {
-  async executeService({ name }: ICreateTagRequestDTO) {
+  async executeCreateService({ name }: ICreateTagRequestDTO) {
     const tagsRepositories = getCustomRepository(TagsRepositories);
 
     const validationFields = Yup.object().shape({
