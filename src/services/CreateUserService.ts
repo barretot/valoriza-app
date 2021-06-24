@@ -2,7 +2,7 @@ import { getCustomRepository } from 'typeorm';
 import * as Yup from 'yup';
 
 import { UsersRepositories } from '../repositories/UsersRepositories';
-import { ICreateUserRequestDTO } from './CreateUserDTO';
+import { ICreateUserRequestDTO } from './ServicesDTO/CreateUserDTO';
 
 class CreateUserService {
   async executeService({ name, email, admin }: ICreateUserRequestDTO) {
