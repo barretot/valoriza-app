@@ -5,6 +5,9 @@ import { getCustomRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 class AuthenticateUserService {
   async executeAuthenticateService({
     email,
@@ -24,7 +27,7 @@ class AuthenticateUserService {
       throw new Error('Email/Password incorrect');
     }
 
-    const secret = '2e0a4575774d2bd2b46ccae27de15a8d';
+    const secret = process.env.SECRET;
 
     const token = sign(
       {
