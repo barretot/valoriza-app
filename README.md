@@ -1,5 +1,3 @@
-# README EM CRIAÇÃO
-
 # NLW Valoriza
 Este projeto serve como um backend para funcionar como API público para demonstrar a utilização da API do Nlw Valoriza. A ideia da aplicação é que os usuários 
 cadastrados e logados no sistema possam elogiar uns aos outros, os usuários cadastrados como administradores são os únicos a ter permissões para poder criar tags para cada elogio que será feito por algum usuário.
