@@ -45,6 +45,17 @@ $ yarn start
 ```
 $ npm run start
 ```
+
+### Para usar todas as rotas da aplicação clique nesse botão e importe o WorkSpace do NLW Valoriza no Insomnia.
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=NLW%20Valoriza%20API&uri=https%3A%2F%2Fgist.githubusercontent.com%2Fbarretot%2F58e637f0e4e18ec5bb992b11a8c5c56c%2Fraw%2F9aa4c564d670f457d7b08390a0d323bd2b52c4e8%2Fgistfile1.txt)
+
+Se você não possui o Insomnia, baixe <a href="https://insomnia.rest/download">aqui</a>
+
+Se você não sabe como importar, clique <a href="https://support.insomnia.rest/article/172-importing-and-exporting-data">aqui</a>
+
+
+
 ### Vizualizando coleções no banco de dados
 Para ver as coleções criada pela aplicação, baixe o software <a href="https://www.beekeeperstudio.io/">Beekeeper Studio</a>, este software é responsável por gerenciar nossa base de dados. Como usamos o SQLITE basta criar uma conexão e passar o arquivo <a href="https://github.com/barretot/NLW-Valoriza/tree/master/src/database">database.sqlite</a> e a conexão ja será criada.
 
