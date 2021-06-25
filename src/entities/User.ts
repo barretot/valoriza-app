@@ -7,6 +7,8 @@ import {
   BeforeInsert,
 } from 'typeorm';
 
+import { Exclude } from 'class-transformer';
+
 import bcrypt from 'bcryptjs';
 
 import { v4 as uuidv4 } from 'uuid';
@@ -26,6 +28,7 @@ class User {
   @Column()
   admin: boolean;
 
+  @Exclude()
   @Column()
   password: string;
 

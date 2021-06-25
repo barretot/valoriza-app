@@ -4,7 +4,6 @@ import { UsersRepositories } from '../repositories/UsersRepositories';
 import { getCustomRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-import { v4 as uuidv4 } from 'uuid';
 
 class AuthenticateUserService {
   async executeAuthenticateService({
